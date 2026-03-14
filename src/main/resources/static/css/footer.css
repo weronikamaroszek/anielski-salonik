@@ -1,0 +1,52 @@
+/* STOPKA */
+.footer {
+    background-color: var(--background);
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 24px 0;
+}
+
+.footer-inner {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+}
+
+.footer-right a {
+    color: var(--text-medium);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-right a:hover {
+    color: var(--gold-dark);
+}
+
+.footer-right svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold-dark);
+}
+
+@media (max-width: 768px) {
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-left { flex-direction: column; }
+}

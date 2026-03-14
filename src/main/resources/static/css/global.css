@@ -1,0 +1,126 @@
+:root {
+    --gold: #C9A84C;
+    --gold-light: #F5E6C0;
+    --gold-dark: #8B6914;
+    --white: #FFFFFF;
+    --background: #F5F0E8;
+    --text-dark: #2c1810;
+    --text-medium: #6b5c4e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    font-size: 18px;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 10px 0;
+    background-color: var(--background) !important;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.navbar-brand {
+    background-color: #F5F0E8;
+}
+
+.navbar-brand img {
+    height: 110px;
+}
+
+.nav-link {
+    color: var(--text-medium) !important;
+    font-size: 1.4rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.nav-link:hover {
+    color: var(--gold) !important;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--white) !important;
+    border-radius: 25px;
+    padding: 10px 26px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+    font-family: sans-serif;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-dark);
+    color: var(--white) !important;
+}
+
+.btn-outline-gold {
+    background-color: transparent;
+    color: #8B6914 !important;
+    border-radius: 25px;
+    padding: 10px 26px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    border: 1.5px solid #8B6914;
+    transition: all 0.3s;
+    font-family: sans-serif;
+}
+
+.btn-outline-gold:hover {
+    border-color: var(--gold);
+    color: #8B6914 !important;
+    background-color: var(--gold);
+}
+
+/* WSPÓLNE KLASY TEKSTOWE */
+.section-label {
+    color: var(--gold-dark);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    font-family: 'Georgia', serif;
+}
+
+.hero-subtitle {
+    color: var(--gold-dark);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.text-gold {
+    color: var(--gold-dark);
+}
+
+/* RESPONSYWNOŚĆ NAVBAR */
+@media (max-width: 992px) {
+    .navbar-brand img { height: 70px; }
+    .nav-link { font-size: 1rem; margin: 5px 0; }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img { height: 55px; }
+}

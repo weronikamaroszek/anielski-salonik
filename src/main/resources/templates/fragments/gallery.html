@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<section th:fragment="gallery" class="gallery-section">
+    <div class="container">
+        <p class="hero-subtitle">GALERIA</p>
+        <h2 class="section-title">Efekty naszej pracy</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img th:src="@{/images/gallery1.jpg}" alt="Maltańczyk po pielęgnacji">
+            </div>
+            <div class="gallery-item">
+                <img th:src="@{/images/gallery2.jpg}" alt="Szpic po pielęgnacji">
+            </div>
+            <div class="gallery-item">
+                <img th:src="@{/images/gallery3.jpg}" alt="Cavapoo po pielęgnacji">
+            </div>
+            <div class="gallery-item">
+                <img th:src="@{/images/gallery4.jpg}" alt="Samoyed po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img th:src="@{/images/gallery5.jpg}" alt="Szczeniak po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img th:src="@{/images/gallery6.jpg}" alt="Yorkshire po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img th:src="@{/images/gallery7.jpg}" alt="Border Collie po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img th:src="@{/images/gallery8.jpg}" alt="Yorkshire po pielęgnacji">
+            </div>
+        </div>
+        <button class="gallery-toggle-btn" id="galleryBtn" onclick="toggleGallery()">
+            <i data-lucide="chevron-down"></i>
+            Zobacz więcej
+        </button>
+    </div>
+</section>
+
+</body>
+</html>

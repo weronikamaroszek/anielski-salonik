@@ -1,0 +1,827 @@
+.booking-section {
+    padding: 80px 0;
+    background-color: #F0EBE0;
+    text-align: center;
+}
+
+.booking-card {
+    background-color: #FDFAF4;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    text-align: left;
+}
+
+.booking-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+/* STEPPER */
+.booking-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 40px;
+}
+
+.booking-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.booking-step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: sans-serif;
+    border: 2px solid rgba(201, 168, 76, 0.3);
+    background: white;
+    color: #aaa;
+    transition: all 0.3s;
+}
+
+.booking-step.active .booking-step-circle {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: white;
+}
+
+.booking-step.done .booking-step-circle {
+    background: var(--gold-light);
+    border-color: var(--gold);
+    color: var(--gold-dark);
+}
+
+.booking-step-label {
+    font-size: 0.85rem;
+    font-family: sans-serif;
+    color: #aaa;
+    letter-spacing: 0.5px;
+}
+
+.booking-step.active .booking-step-label,
+.booking-step.done .booking-step-label {
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+
+.booking-step-line {
+    width: 100px;
+    height: 2px;
+    background: rgba(201, 168, 76, 0.2);
+    margin: 0 8px;
+    margin-bottom: 22px;
+}
+
+/* ZAKŁADKI GATUNEK */
+.animal-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.animal-tab {
+    padding: 10px 28px;
+    border-radius: 30px;
+    border: 2px solid rgba(201, 168, 76, 0.3);
+    background: white;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.animal-tab:hover {
+    border-color: var(--gold-light);
+    background: var(--gold-light);
+}
+
+.animal-tab.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: white;
+}
+
+/* SIATKA USŁUG */
+.booking-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.booking-services-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.booking-service-card {
+    border: 2px solid rgba(201, 168, 76, 0.2);
+    border-radius: 12px;
+    padding: 20px 22px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.booking-service-card:hover {
+    border-color: var(--gold-light);
+    background: var(--gold-light);
+}
+
+.booking-service-card.selected {
+    border-color: var(--gold);
+    background: #FFFBF0;
+}
+
+.booking-service-card .bs-name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.booking-service-card .bs-meta {
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: #999;
+    display: flex;
+    gap: 10px;
+}
+
+.booking-service-card .bs-price {
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+
+.booking-separator {
+    border: none;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    margin: 24px 0;
+}
+
+.booking-extra-label {
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: var(--text-medium);
+    margin-bottom: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* PRZYCISKI */
+.booking-btn-next {
+    width: 100%;
+    padding: 20px;
+    background: var(--gold);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.booking-btn-next:hover { background: var(--gold-dark); }
+
+.booking-btn-next:disabled {
+    background: rgba(201, 168, 76, 0.2);
+    cursor: default;
+    color: #aaa;
+}
+
+.booking-btn-back {
+    width: 100%;
+    padding: 14px;
+    background: none;
+    border: 1.5px solid rgba(201, 168, 76, 0.3);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    color: var(--text-medium);
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s;
+}
+
+.booking-btn-back:hover {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+}
+
+/* PODSUMOWANIE */
+.booking-summary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--gold-light);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+}
+
+.booking-summary-icon {
+    width: 46px;
+    height: 46px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(201,168,76,0.3);
+}
+
+.booking-summary-icon svg {
+    width: 22px;
+    height: 22px;
+    color: var(--gold-dark);
+    stroke: var(--gold-dark);
+}
+
+.booking-summary-label {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    font-family: sans-serif;
+    margin-bottom: 2px;
+}
+
+.booking-summary-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    font-family: sans-serif;
+}
+
+.booking-change-btn {
+    margin-left: auto;
+    background: none;
+    border: 1.5px solid var(--gold-dark);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 1rem;
+    color: var(--gold-dark);
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.booking-change-btn:hover {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+}
+
+.booking-change-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+}
+
+/* KALENDARZ */
+.booking-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.booking-cal-title {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.booking-cal-nav {
+    background: none;
+    border: 1.5px solid rgba(201, 168, 76, 0.3);
+    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-cal-nav:hover {
+    background: var(--gold-light);
+    border-color: var(--gold);
+}
+
+.booking-cal-nav svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold-dark);
+}
+
+.booking-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.booking-cal-day-name {
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    color: var(--text-medium);
+    font-weight: 600;
+    padding: 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.booking-cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.booking-cal-day.past { color: #ccc; }
+
+.booking-cal-day.available {
+    background: white;
+    color: var(--text-dark);
+    border-color: rgba(201, 168, 76, 0.2);
+    cursor: pointer;
+}
+
+.booking-cal-day.available:hover {
+    border-color: var(--gold);
+    background: var(--gold-light);
+}
+
+.booking-cal-day.has-slots::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.booking-cal-day.selected {
+    background: var(--gold) !important;
+    color: white !important;
+    border-color: var(--gold) !important;
+}
+
+.booking-cal-day.selected::after { background: white; }
+
+.booking-cal-day.unavailable {
+    color: #ccc;
+    background: #fafafa;
+}
+
+/* LEGENDA */
+.booking-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.booking-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: var(--text-medium);
+}
+
+.booking-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* GODZINY */
+.booking-time-title {
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.booking-time-title svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--gold-dark);
+}
+
+.booking-time-slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+    animation: bookingFadeIn 0.3s ease;
+}
+
+.booking-time-slot {
+    padding: 14px;
+    border: 2px solid rgba(201, 168, 76, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: white;
+    color: var(--text-dark);
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.booking-time-slot:hover {
+    border-color: var(--gold);
+    background: var(--gold-light);
+}
+
+.booking-time-slot.selected {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: white;
+}
+
+@keyframes bookingFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+    .booking-services-grid { grid-template-columns: 1fr; }
+    .booking-card { padding: 24px 18px; }
+    .booking-step-line { width: 50px; }
+    .animal-tab { font-size: 1rem; padding: 8px 20px; }
+    .booking-time-slots { grid-template-columns: repeat(3, 1fr); }
+    .booking-summary { flex-wrap: wrap; }
+    .booking-change-btn { margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+    .booking-step-line { width: 30px; }
+}
+
+/* KROK 3 — FORMULARZ POTWIERDZENIA */
+.booking-confirm-summary {
+    background: var(--gold-light);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+}
+
+.booking-confirm-label {
+    font-size: 0.85rem;
+    font-family: sans-serif;
+    color: var(--gold-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.booking-confirm-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.booking-confirm-row svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold-dark);
+    flex-shrink: 0;
+}
+
+.booking-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.booking-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.booking-form-group label {
+    font-size: 0.95rem;
+    font-family: sans-serif;
+    color: var(--text-medium);
+    font-weight: 600;
+}
+
+.booking-form-group input,
+.booking-form-group textarea {
+    border: 1.5px solid rgba(201, 168, 76, 0.3);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: var(--text-dark);
+    background: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.booking-form-group input:focus,
+.booking-form-group textarea:focus {
+    border-color: var(--gold);
+}
+
+.booking-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+@media (max-width: 600px) {
+    .booking-form-grid { grid-template-columns: 1fr; }
+}
+
+/* EKRAN SUKCESU */
+.booking-success {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.booking-success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+}
+
+.booking-success-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--gold-dark);
+}
+
+.booking-success h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-family: 'Georgia', serif;
+}
+
+.booking-success p {
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    color: var(--text-medium);
+    margin-bottom: 8px;
+}
+
+.booking-success-note {
+    margin: 24px 0 32px;
+    font-size: 1rem !important;
+}
+
+/* ROZMIAR PSA */
+.dog-sizes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.dog-size-card {
+    border: 2px solid rgba(201, 168, 76, 0.2);
+    border-radius: 12px;
+    padding: 20px 22px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+    text-align: center;
+}
+
+.dog-size-card .bs-name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.dog-size-card .bs-meta {
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: #999;
+}
+
+.dog-size-card:hover {
+    border-color: var(--gold-light);
+    background: var(--gold-light);
+}
+
+.dog-size-card.selected {
+    border-color: var(--gold);
+    background: #FFFBF0;
+}
+
+/* RASY PSA */
+.dog-breeds-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.dog-breed-card {
+    border: 2px solid rgba(201, 168, 76, 0.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.dog-breed-card:hover {
+    border-color: var(--gold-light);
+    background: var(--gold-light);
+}
+
+.dog-breed-card.selected {
+    border-color: var(--gold);
+    background: #FFFBF0;
+}
+
+.dog-breed-other {
+    font-style: normal;
+    color: var(--text-medium);
+}
+
+/* ALERT DUŻY PIES */
+.dog-size-alert {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FFF8E7;
+    border: 1.5px solid rgba(201, 168, 76, 0.4);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
+}
+
+.dog-size-alert svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold-dark);
+    flex-shrink: 0;
+}
+
+.dog-size-alert strong {
+    font-family: sans-serif;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.dog-size-alert p {
+    font-family: sans-serif;
+    color: var(--text-medium);
+    margin: 0;
+}
+
+.dog-size-alert a {
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .dog-sizes-grid { grid-template-columns: repeat(3, 1fr); }
+    .dog-breeds-grid { grid-template-columns: 1fr; }
+}
+
+/* PYTANIA O PSA */
+.dog-visit-toggle {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.dog-visit-btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 2px solid rgba(201, 168, 76, 0.3);
+    background: white;
+    font-size: 1rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.dog-visit-btn:hover {
+    border-color: var(--gold-light);
+    background: var(--gold-light);
+}
+
+.dog-visit-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: white;
+}
+
+/* CHECKBOXY ZACHOWANIA */
+.dog-behavior-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.dog-behavior-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 14px 16px;
+    border: 2px solid rgba(201, 168, 76, 0.2);
+    border-radius: 10px;
+    background: white;
+    transition: all 0.2s;
+}
+
+.dog-behavior-item:hover {
+    border-color: var(--gold-light);
+    background: var(--gold-light);
+}
+
+.dog-behavior-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--gold);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .dog-behavior-grid { grid-template-columns: 1fr; }
+    .dog-visit-toggle { flex-direction: column; }
+}
