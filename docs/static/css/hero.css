@@ -1,0 +1,90 @@
+.hero {
+    position: relative;
+    min-height: 90vh;
+    background: url('/images/hero-bg.png') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(245, 240, 232, 0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 580px;
+    margin-left: 0;
+    margin-right: auto;
+    padding-left: 60px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+}
+
+.hero-desc {
+    color: var(--text-medium);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.9);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.hero-badges {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.hero-badges span {
+    font-size: 1.2rem;
+    color: var(--text-medium);
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+@media (max-width: 992px) {
+    .hero-content h1 { font-size: 3rem; }
+    .hero-content { padding-left: 30px; }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        justify-content: center;
+    }
+    .hero-content {
+        text-align: center;
+        padding: 0 20px;
+    }
+    .hero-content h1 { font-size: 2.4rem; }
+    .hero-buttons { justify-content: center; }
+    .hero-badges { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 2rem; }
+    .btn-gold, .btn-outline-gold {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}

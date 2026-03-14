@@ -1,0 +1,78 @@
+/* KONTAKT */
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--background);
+    text-align: center;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 24px;
+    text-align: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s, border-color 0.3s;
+    height: 100%;
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+    border-color: var(--gold);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--gold-dark);
+}
+
+.contact-card h4 {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-card a {
+    color: var(--text-medium);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-card a:hover {
+    color: var(--gold-dark);
+}
+
+.contact-section .section-title,
+.contact-section .hero-subtitle {
+    text-align: center;
+}
+.contact-card:hover .contact-icon {
+    background-color: var(--gold);
+}
+
+.contact-card:hover .contact-icon svg {
+    stroke: var(--white);
+}

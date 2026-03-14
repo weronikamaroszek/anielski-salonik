@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anielski Salonik - Salon Pielęgnacji Zwierząt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/how-it-works.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="images/logo.png" alt="Anielski Salonik" height="50">
+        </a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#hero">Strona główna</a></li>
+                <li class="nav-item"><a class="nav-link" href="#uslugi">Usługi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#o-nas">O nas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#cennik">Cennik</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+                <li class="nav-item ms-2">
+                    <a class="btn btn-gold" href="#rezerwacja">Umów wizytę</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <p class="hero-subtitle">SALON PIELĘGNACJI ZWIERZĄT</p>
+        <h1>Spa i styl dla<br>
+            <span class="text-gold">Twojego pupila</span>
+        </h1>
+        <p class="hero-desc">Psy, koty, króliki - wiemy, jak wydobyć z nich całą urodę!<br>
+            Fryzjer dla zwierząt w Złotowie.</p>
+        <div class="hero-buttons">
+            <a href="#rezerwacja" class="btn btn-gold">Umów wizytę</a>
+            <a href="tel:539916720" class="btn btn-outline-gold"><i data-lucide="phone"></i> 539 916 720</a>
+        </div>
+        <div class="hero-badges">
+            <span><i data-lucide="heart"></i> Delikatnie</span>
+            <span><i data-lucide="sparkles"></i> Profesjonalnie</span>
+            <span><i data-lucide="star"></i> Indywidualnie</span>
+        </div>
+    </div>
+</section>
+
+<!-- USŁUGI -->
+<section class="services-section" id="uslugi">
+    <div class="container">
+        <p class="hero-subtitle">OFEROWANE USŁUGI</p>
+        <h2 class="section-title">Zadbaj o swojego pupila</h2>
+        <div class="row g-4 mt-3">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="scissors"></i></div>
+                    <h3>Strzyżenie psów i królików</h3>
+                    <p>Profesjonalne strzyżenie dostosowane do rasy i potrzeb.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="cat"></i></div>
+                    <h3>Pielęgnacja kotów</h3>
+                    <p>Delikatna pielęgnacja sierści i pazurów Twojego kota.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="scissors"></i></div>
+                    <h3>Trymowanie</h3>
+                    <p>Trymowanie ręczne i maszynowe dla wybranych ras.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="bath"></i></div>
+                    <h3>Kąpiel i wyczesywanie</h3>
+                    <p>Kąpiele pielęgnacyjne z profesjonalnymi kosmetykami.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="sparkles"></i></div>
+                    <h3>Czyszczenie zębów i uszu</h3>
+                    <p>Higiena zębów szczoteczką ultradźwiękową.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="heart"></i></div>
+                    <h3>Wanna ozonowa</h3>
+                    <p>Zabiegi pielęgnacyjne i terapia skóry ozonem.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JAK TO DZIAŁA -->
+<section class="how-it-works" id="jak-to-dziala">
+    <div class="container">
+        <p class="hero-subtitle">JAK TO DZIAŁA</p>
+        <h2 class="section-title">Wizyta krok po kroku</h2>
+        <div class="row g-4 mt-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="step-card">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon"><i data-lucide="calendar"></i></div>
+                        <span class="step-number">1</span>
+                    </div>
+                    <h3>Zarezerwuj online</h3>
+                    <p>Wybierz usługę i termin bezpośrednio na stronie - szybko i wygodnie.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="step-card">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon"><i data-lucide="message-circle"></i></div>
+                        <span class="step-number">2</span>
+                    </div>
+                    <h3>Powitanie i konsultacja</h3>
+                    <p>Na miejscu poznamy potrzeby Twojego pupila i dobierzemy odpowiednią pielęgnację.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="step-card">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon"><i data-lucide="scissors"></i></div>
+                        <span class="step-number">3</span>
+                    </div>
+                    <h3>Profesjonalna pielęgnacja</h3>
+                    <p>Kąpiel, strzyżenie, wyczesywanie - wszystko z dbałością i delikatnością.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="step-card">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon"><i data-lucide="heart"></i></div>
+                        <span class="step-number">4</span>
+                    </div>
+                    <h3>Szczęśliwy pupil!</h3>
+                    <p>Twój zwierzak wraca do Ciebie zadbany, pachnący i pełen energii.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- O NAS -->
+<section class="about-section" id="o-nas">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-images">
+                    <img src="images/salon1.jpg" alt="Anielski Salonik - wnętrze" class="about-img-main">
+                    <img src="images/salon2.jpg" alt="Anielski Salonik - sprzęt" class="about-img-secondary">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <span class="hero-subtitle">O NAS</span>
+                    <h2>Indywidualne podejście do każdego pupila</h2>
+                    <p>W Anielskim Saloniku każde zwierzątko traktowane jest wyjątkowo. Pielęgnacja dobierana jest indywidualnie - z uwzględnieniem rasy, rodzaju sierści, stanu skóry i temperamentu Twojego pupila.</p>
+                    <p>Pracujemy delikatnie i profesjonalnie, korzystając z najwyższej jakości kosmetyków i sprzętu groomerskiego. Twój pupil jest u nas bezpieczny i zadbany.</p>
+                    <img src="images/certyfikaty.png" alt="Certyfikaty Anielski Salonik" class="about-cert">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CENNIK -->
+<section class="pricing-section" id="cennik">
+    <div class="container">
+        <p class="hero-subtitle">CENNIK</p>
+        <h2 class="section-title">Cennik usług</h2>
+        <p class="pricing-note mb-5">Końcowa cena każdej wizyty zależy od stanu włosa, fryzury, zachowania oraz wielkości psa.</p>
+        <div class="row g-4 mt-2">
+            <div class="col-xl-4 col-lg-6">
+                <div class="pricing-card">
+                    <h3>Kąpiel i strzyżenie psów</h3>
+                    <div class="pricing-row"><span>Yorkshire Terrier</span><span>100-120 zł</span></div>
+                    <div class="pricing-row"><span>Maltańczyk</span><span>110-130 zł</span></div>
+                    <div class="pricing-row"><span>Shih Tzu</span><span>110-130 zł</span></div>
+                    <div class="pricing-row"><span>Szpic miniaturowy</span><span>100-120 zł</span></div>
+                    <div class="pricing-row"><span>Hawańczyk / Maltipoo</span><span>110-130 zł</span></div>
+                    <div class="pricing-row"><span>West Highland White Terrier</span><span>140-160 zł</span></div>
+                    <div class="pricing-row"><span>Sznaucer miniaturowy</span><span>120-140 zł</span></div>
+                    <div class="pricing-row"><span>Pudel miniaturowy</span><span>140-160 zł</span></div>
+                    <div class="pricing-row"><span>Cocer Spaniel / Cockapoo / Cavapoo</span><span>140-160 zł</span></div>
+                    <div class="pricing-row"><span>Cavalier King Charles Spaniel</span><span>100-120 zł</span></div>
+                    <div class="pricing-row"><span>Lagotto Romagnolo</span><span>150-170 zł</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <h3>Kąpiel i wyczesanie psów</h3>
+                    <div class="pricing-row"><span>Małe krótkowłose do 10 kg</span><span>100 zł</span></div>
+                    <div class="pricing-row"><span>Średnie krótkowłose 10-20 kg</span><span>100-120 zł</span></div>
+                    <div class="pricing-row"><span>Duże krótkowłose 20-40 kg</span><span>120-140 zł</span></div>
+                    <div class="pricing-row"><span>Średnie długowłose 10-20 kg</span><span>160-250 zł</span></div>
+                    <div class="pricing-row"><span>Duże długowłose 20-60 kg</span><span>250-400 zł</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <h3>Trymowanie i kąpiel psów</h3>
+                    <div class="pricing-row"><span>Małe do 10 kg</span><span>130-150 zł</span></div>
+                    <div class="pricing-row"><span>Średnie 10–20 kg</span><span>150-170 zł</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <h3>Pielęgnacja kotów</h3>
+                    <div class="pricing-row"><span>Wyczesywanie - kot krótkowłosy</span><span>100-150 zł</span></div>
+                    <div class="pricing-row"><span>Wyczesywanie - kot długowłosy</span><span>150-250 zł</span></div>
+                    <div class="pricing-row"><span>Usuwanie kołtunów - golenie, wyczesywanie</span><span>+100 zł</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <h3>Pielęgnacja królików</h3>
+                    <div class="pricing-row"><span>Wyczesywanie - królik krótkowłosy</span><span>80 zł</span></div>
+                    <div class="pricing-row"><span>Strzyżenie - królik Karżełek Teddy</span><span>100-120 zł</span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <h3>Usługi dodatkowe</h3>
+                    <div class="pricing-row"><span>Kąpiel w wannie ozonowej</span><span>60 zł</span></div>
+                    <div class="pricing-row"><span>Czyszczenie zębów szczoteczką ultradźwiękową</span><span>20 zł</span></div>
+                    <div class="pricing-row"><span>Czyszczenie zatok okołoodbytniczych</span><span>20 zł</span></div>
+                    <div class="pricing-row"><span>Obcinanie pazurów</span><span>20 zł</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery-section" id="galeria">
+    <div class="container">
+        <p class="hero-subtitle">GALERIA</p>
+        <h2 class="section-title">Efekty naszej pracy</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gallery1.jpg" alt="Maltańczyk po pielęgnacji">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery2.jpg" alt="Szpic po pielęgnacji">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery3.jpg" alt="Cavapoo po pielęgnacji">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery4.jpg" alt="Samoyed po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img src="images/gallery5.jpg" alt="Szczeniak po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img src="images/gallery6.jpg" alt="Yorkshire po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img src="images/gallery7.jpg" alt="Border Collie po pielęgnacji">
+            </div>
+            <div class="gallery-item gallery-hidden">
+                <img src="images/gallery8.jpg" alt="Yorkshire po pielęgnacji">
+            </div>
+        </div>
+        <button class="gallery-toggle-btn" id="galleryBtn" onclick="toggleGallery()">
+            <i data-lucide="chevron-down"></i>
+            Zobacz więcej
+        </button>
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="rezerwacja">
+    <div class="container">
+        <p class="hero-subtitle">REZERWACJA ONLINE</p>
+        <h2 class="section-title">Umów wizytę w 3 krokach</h2>
+        <p class="pricing-note mb-5">Wybierz usługę, termin i potwierdź — bez dzwonienia!</p>
+        <div class="booking-stepper">
+            <div class="booking-step active" id="step-dot-1">
+                <div class="booking-step-circle">1</div>
+                <div class="booking-step-label">Usługa</div>
+            </div>
+            <div class="booking-step-line"></div>
+            <div class="booking-step" id="step-dot-2">
+                <div class="booking-step-circle">2</div>
+                <div class="booking-step-label">Termin</div>
+            </div>
+            <div class="booking-step-line"></div>
+            <div class="booking-step" id="step-dot-3">
+                <div class="booking-step-circle">3</div>
+                <div class="booking-step-label">Potwierdzenie</div>
+            </div>
+        </div>
+        <div class="booking-card" id="booking-step-1">
+            <h3>Wybierz gatunek i usługę</h3>
+            <div class="animal-tabs">
+                <button class="animal-tab active" onclick="selectAnimal('pies', this)"><i data-lucide="dog"></i> Pies</button>
+                <button class="animal-tab" onclick="selectAnimal('kot', this)"><i data-lucide="cat"></i> Kot</button>
+                <button class="animal-tab" onclick="selectAnimal('krolik', this)"><i data-lucide="rabbit"></i> Królik</button>
+            </div>
+            <div class="booking-services-list" id="booking-services-list"></div>
+            <div id="dog-size-section" style="display:none">
+                <hr class="booking-separator">
+                <p class="booking-extra-label">Rozmiar psa</p>
+                <div class="dog-sizes-grid">
+                    <div class="dog-size-card" onclick="selectDogSize('maly', this)">
+                        <div class="bs-name">Mały</div>
+                        <div class="bs-meta"><span>do 10 kg</span></div>
+                    </div>
+                    <div class="dog-size-card" onclick="selectDogSize('sredni', this)">
+                        <div class="bs-name">Średni</div>
+                        <div class="bs-meta"><span>10–20 kg</span></div>
+                    </div>
+                    <div class="dog-size-card" onclick="selectDogSize('duzy', this)">
+                        <div class="bs-name">Duży</div>
+                        <div class="bs-meta"><span>powyżej 20 kg</span></div>
+                    </div>
+                </div>
+                <div id="dog-breed-section"></div>
+            </div>
+            <hr class="booking-separator">
+            <p class="booking-extra-label">Usługi dodatkowe</p>
+            <div class="booking-services-grid"></div>
+            <button class="booking-btn-next" id="booking-btn-next" disabled onclick="goToStep2()">
+                Dalej — wybierz termin →
+            </button>
+        </div>
+        <div class="booking-card" id="booking-step-2" style="display:none">
+            <div class="booking-summary">
+                <div class="booking-summary-icon">
+                    <i id="summary-animal-icon" data-lucide="dog"></i>
+                </div>
+                <div>
+                    <div class="booking-summary-label">Wybrana usługa</div>
+                    <div class="booking-summary-name" id="summary-service-name"></div>
+                </div>
+                <button class="booking-change-btn" onclick="goToStep1()">
+                    <i data-lucide="arrow-left"></i> Zmień
+                </button>
+            </div>
+            <div class="booking-cal-header">
+                <button class="booking-cal-nav" onclick="prevMonth()">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <h3 class="booking-cal-title" id="cal-title"></h3>
+                <button class="booking-cal-nav" onclick="nextMonth()">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+            <div class="booking-cal-grid" id="booking-cal-grid"></div>
+            <div class="booking-legend">
+                <div class="booking-legend-item">
+                    <div class="booking-legend-dot" style="background: var(--gold)"></div>
+                    Dostępne terminy
+                </div>
+                <div class="booking-legend-item">
+                    <div class="booking-legend-dot" style="background: #ddd"></div>
+                    Brak terminów
+                </div>
+            </div>
+            <div id="booking-time-section" style="display:none">
+                <h4 class="booking-time-title">
+                    <i data-lucide="clock"></i>
+                    <span id="booking-time-title-text">Dostępne godziny</span>
+                </h4>
+                <div class="booking-time-slots" id="booking-time-slots"></div>
+            </div>
+            <button class="booking-btn-next" id="booking-btn-step2" disabled onclick="goToStep3()">
+                Dalej — potwierdź wizytę →
+            </button>
+            <button class="booking-btn-back" onclick="goToStep1()">
+                ← Wróć do wyboru usługi
+            </button>
+        </div>
+        <div class="booking-card" id="booking-step-3" style="display:none">
+            <h3>Potwierdź rezerwację</h3>
+            <div class="booking-confirm-summary">
+                <p class="booking-confirm-label">Podsumowanie wizyty</p>
+                <div class="booking-confirm-row">
+                    <span id="confirm-animal-icon"></span>
+                    <span id="confirm-animal-name"></span>
+                </div>
+                <div class="booking-confirm-row">
+                    <i data-lucide="scissors"></i>
+                    <span id="confirm-service-name"></span>
+                </div>
+                <div class="booking-confirm-row">
+                    <i data-lucide="calendar"></i>
+                    <span id="confirm-datetime"></span>
+                </div>
+            </div>
+            <div class="booking-form-grid">
+                <div class="booking-form-group">
+                    <label>Imię *</label>
+                    <input type="text" id="confirm-name" placeholder="Twoje imię">
+                </div>
+                <div class="booking-form-group">
+                    <label>Telefon *</label>
+                    <input type="tel" id="confirm-phone" placeholder="Numer telefonu">
+                </div>
+            </div>
+            <div class="booking-form-group">
+                <label>Uwagi (opcjonalnie)</label>
+                <textarea id="confirm-notes" placeholder=""></textarea>
+            </div>
+            <div id="dog-extra-questions" style="display:none">
+                <hr class="booking-separator">
+                <p class="booking-extra-label">Kilka pytań o Twojego psa</p>
+                <div class="booking-form-group">
+                    <label>Czy piesek był już u nas w salonie?</label>
+                    <div class="dog-visit-toggle">
+                        <button class="dog-visit-btn" id="btn-visited-yes" onclick="setVisited(true)">Tak</button>
+                        <button class="dog-visit-btn" id="btn-visited-no" onclick="setVisited(false)">Nie, pierwsza wizyta</button>
+                    </div>
+                </div>
+                <div id="dog-behavior-section" style="display:none">
+                    <p class="booking-extra-label">Jak zachowuje się piesek podczas wizyty?</p>
+                    <div class="dog-behavior-grid">
+                        <label class="dog-behavior-item">
+                            <input type="checkbox" value="spokojny"> Spokojny
+                        </label>
+                        <label class="dog-behavior-item">
+                            <input type="checkbox" value="pazury"> Nie lubi obcinania pazurków
+                        </label>
+                        <label class="dog-behavior-item">
+                            <input type="checkbox" value="lapy"> Nie lubi dotykania łap
+                        </label>
+                        <label class="dog-behavior-item">
+                            <input type="checkbox" value="alergia"> Możliwa alergia na szampony
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button class="booking-btn-next" id="booking-btn-step3" onclick="submitBooking()">
+                ✦ Potwierdź rezerwację
+            </button>
+            <button class="booking-btn-back" onclick="goToStep2fromStep3()">
+                Wróć
+            </button>
+        </div>
+        <div class="booking-success" id="booking-success" style="display:none">
+            <div class="booking-success-icon">
+                <i data-lucide="check"></i>
+            </div>
+            <h2>Wizyta zarezerwowana!</h2>
+            <p id="success-datetime"></p>
+            <p id="success-service"></p>
+            <p class="booking-success-note">
+                Potwierdzenie wizyty otrzymasz SMS-em.<br>W razie pytań zadzwoń: <strong>539 916 720</strong>
+            </p>
+            <button class="btn-gold" onclick="resetBooking()">Umów kolejną wizytę</button>
+        </div>
+    </div>
+</section>
+
+<!-- MAPA -->
+<section class="map-section" id="lokalizacja">
+    <div class="container">
+        <p class="hero-subtitle">LOKALIZACJA</p>
+        <h2 class="section-title">Znajdziesz nas tutaj</h2>
+        <p class="pricing-note mb-4">Plac Kościuszki 11/6, 77-400 Złotów</p>
+    </div>
+    <div class="map-wrapper">
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2399.1!2d17.0373!3d53.3621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47031f2e2e2e2e2f%3A0x1!2sPlac+Ko%C5%9Bciuszki+11%2F6%2C+77-400+Z%C5%82ot%C3%B3w!5e0!3m2!1spl!2spl!4v1"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact-section" id="kontakt">
+    <div class="container">
+        <p class="hero-subtitle">KONTAKT</p>
+        <h2 class="section-title">Skontaktuj się z nami</h2>
+        <div class="row g-4 mt-4 justify-content-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="contact-card">
+                    <div class="contact-icon"><i data-lucide="phone"></i></div>
+                    <h4>Telefon</h4>
+                    <p><a href="tel:539916720">539 916 720</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="contact-card">
+                    <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                    <h4>Adres</h4>
+                    <p>Plac Kościuszki 11/6<br>77-400 Złotów</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="contact-card">
+                    <div class="contact-icon"><i data-lucide="clock"></i></div>
+                    <h4>Godziny</h4>
+                    <p>Pon–Pt: 9:00–17:00<br>Sob: do ustalenia</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="contact-card">
+                    <div class="contact-icon"><i data-lucide="facebook"></i></div>
+                    <h4>Facebook</h4>
+                    <p><a href="https://facebook.com/anielskisalonik" target="_blank">Odwiedź nas</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-left">
+            <img src="images/logo.png" alt="Anielski Salonik" height="40">
+            <span>© 2025 Anielski Salonik. Wszystkie prawa zastrzeżone.</span>
+        </div>
+        <div class="footer-right">
+            <a href="tel:539916720">539 916 720</a>
+            <a href="https://facebook.com/anielskisalonik" target="_blank">Facebook</a>
+            <i data-lucide="paw-print"></i>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/booking.js"></script>
+<script>
+    lucide.createIcons();
+    renderBookingServices('pies');
+    renderBookingExtras('pies');
+</script>
+
+</body>
+</html>
