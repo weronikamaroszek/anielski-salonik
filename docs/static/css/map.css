@@ -14,3 +14,10 @@
     box-shadow: 0 4px 30px rgba(0,0,0,0.08);
     margin-bottom: 80px;
 }
+
+/* NOWE: Dopasowanie wysokości mapy na telefonach */
+@media (max-width: 768px) {
+    .map-wrapper iframe {
+        height: 300px; /* Nieco mniejsza mapa na telefonie */
+    }
+}

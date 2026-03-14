@@ -750,7 +750,8 @@
 }
 
 @media (max-width: 768px) {
-    .dog-sizes-grid { grid-template-columns: repeat(3, 1fr); }
+    /* ZMIANA: Zamiast repeat(3, 1fr) robimy 1fr, żeby była jedna kolumna */
+    .dog-sizes-grid { grid-template-columns: 1fr; }
     .dog-breeds-grid { grid-template-columns: 1fr; }
 }
 
