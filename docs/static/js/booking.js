@@ -518,6 +518,7 @@ function resetBooking() {
     document.getElementById('dog-breed-section').innerHTML = '';
     document.querySelectorAll('.animal-tab').forEach((t, i) => {
         t.classList.toggle('active', i === 0);
+        document.getElementById('rezerwacja').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 }
 
