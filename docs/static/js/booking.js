@@ -270,6 +270,9 @@ function goToStep2() {
     document.getElementById('booking-btn-step2').disabled = true;
 
     renderCalendar();
+    setTimeout(() => {
+        document.querySelector('.booking-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 }
 
 function goToStep1() {
@@ -279,11 +282,10 @@ function goToStep1() {
     document.getElementById('step-dot-2').classList.remove('active');
     document.getElementById('step-dot-1').classList.remove('done');
     document.getElementById('step-dot-1').classList.add('active');
-}
 
-function goToStep3() {
-    const service = bookingServices[selectedAnimal][selectedService];
-    alert(`✅ Dziękujemy!\n\nUsługa: ${service.name}\nData: ${selectedDate}\nGodzina: ${selectedTime}\n\nWkrótce dodamy potwierdzenie przez e-mail!`);
+    setTimeout(() => {
+        document.querySelector('.booking-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 }
 
 // =====================
@@ -454,6 +456,10 @@ function goToStep3() {
 
     showDogQuestions();
     lucide.createIcons();
+
+    setTimeout(() => {
+        document.querySelector('.booking-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 }
 
 function goToStep2fromStep3() {
@@ -463,6 +469,10 @@ function goToStep2fromStep3() {
     document.getElementById('step-dot-3').classList.remove('active');
     document.getElementById('step-dot-2').classList.remove('done');
     document.getElementById('step-dot-2').classList.add('active');
+
+    setTimeout(() => {
+        document.querySelector('.booking-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 }
 
 function submitBooking() {
@@ -489,6 +499,10 @@ function submitBooking() {
     document.getElementById('step-dot-3').classList.add('done');
 
     lucide.createIcons();
+
+    setTimeout(() => {
+        document.querySelector('.booking-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 }
 
 function resetBooking() {
@@ -518,7 +532,6 @@ function resetBooking() {
     document.getElementById('dog-breed-section').innerHTML = '';
     document.querySelectorAll('.animal-tab').forEach((t, i) => {
         t.classList.toggle('active', i === 0);
-        document.getElementById('rezerwacja').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 }
 
