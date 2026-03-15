@@ -2,9 +2,22 @@
 function openServiceModal(name) {
     const overlay = document.getElementById('modal-' + name);
     overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.dataset.scrollY = scrollY;
 }
 
+function closeServiceModal(name) {
+    const overlay = document.getElementById('modal-' + name);
+    overlay.classList.remove('active');
+    const scrollY = document.body.dataset.scrollY || 0;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, parseInt(scrollY));
+}
 function closeServiceModal(name) {
     const overlay = document.getElementById('modal-' + name);
     overlay.classList.remove('active');
