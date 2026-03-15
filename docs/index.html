@@ -74,52 +74,122 @@
     <div class="container">
         <p class="hero-subtitle">OFEROWANE USŁUGI</p>
         <h2 class="section-title">Zadbaj o swojego pupila</h2>
+
+        <!-- 4 zwykłe karty -->
         <div class="row g-4 mt-3">
-            <div class="col-md-4">
-                <div class="service-card">
+            <div class="col-md-3 col-sm-6">
+                <div class="service-card" onclick="document.getElementById('cennik').scrollIntoView({behavior:'smooth'})">
                     <div class="service-icon"><i data-lucide="scissors"></i></div>
                     <h3>Strzyżenie psów i królików</h3>
                     <p>Profesjonalne strzyżenie dostosowane do rasy i potrzeb.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card">
+            <div class="col-md-3 col-sm-6">
+                <div class="service-card" onclick="document.getElementById('cennik').scrollIntoView({behavior:'smooth'})">
                     <div class="service-icon"><i data-lucide="cat"></i></div>
                     <h3>Pielęgnacja kotów</h3>
                     <p>Delikatna pielęgnacja sierści i pazurów Twojego kota.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card">
+            <div class="col-md-3 col-sm-6">
+                <div class="service-card" onclick="document.getElementById('cennik').scrollIntoView({behavior:'smooth'})">
                     <div class="service-icon"><i data-lucide="scissors"></i></div>
                     <h3>Trymowanie</h3>
                     <p>Trymowanie ręczne i maszynowe dla wybranych ras.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card">
+            <div class="col-md-3 col-sm-6">
+                <div class="service-card" onclick="document.getElementById('cennik').scrollIntoView({behavior:'smooth'})">
                     <div class="service-icon"><i data-lucide="bath"></i></div>
                     <h3>Kąpiel i wyczesywanie</h3>
                     <p>Kąpiele pielęgnacyjne z profesjonalnymi kosmetykami.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon"><i data-lucide="sparkles"></i></div>
-                    <h3>Czyszczenie zębów i uszu</h3>
+        </div>
+
+        <!-- 2 wyróżnione karty -->
+        <div class="row g-4 mt-2 justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="service-card-featured" onclick="openServiceModal('szczoteczka')">
+                    <span class="service-badge">Polecamy</span>
+                    <div class="service-icon service-icon-featured"><i data-lucide="sparkles"></i></div>
+                    <h3>Czyszczenie zębów szczoteczką ultradźwiękową</h3>
                     <p>Higiena zębów szczoteczką ultradźwiękową.</p>
+                    <a class="service-link" href="#">Dowiedz się więcej →</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <div class="service-icon"><i data-lucide="heart"></i></div>
+            <div class="col-md-4 col-sm-6">
+                <div class="service-card-featured" onclick="openServiceModal('wanna')">
+                    <span class="service-badge">Polecamy</span>
+                    <div class="service-icon service-icon-featured"><i data-lucide="heart"></i></div>
                     <h3>Wanna ozonowa</h3>
                     <p>Zabiegi pielęgnacyjne i terapia skóry ozonem.</p>
+                    <a class="service-link" href="#">Dowiedz się więcej →</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- MODAL: Szczoteczka -->
+<div class="service-modal-overlay" id="modal-szczoteczka">
+    <div class="service-modal">
+        <button class="service-modal-close" onclick="closeServiceModal('szczoteczka')">×</button>
+        <h3>Czyszczenie zębów szczoteczką ultradźwiękową</h3>
+        <div class="service-modal-carousel" id="carousel-szczoteczka">
+            <img src="static/images/szczoteczka1.jpg" class="active" alt="">
+            <img src="static/images/szczoteczka2.jpg" alt="">
+            <img src="static/images/szczoteczka3.jpg" alt="">
+            <button class="carousel-btn carousel-btn-prev" onclick="prevSlide('szczoteczka')">&#8249;</button>
+            <button class="carousel-btn carousel-btn-next" onclick="nextSlide('szczoteczka')">&#8250;</button>
+        </div>
+        <div class="carousel-dots" id="dots-szczoteczka">
+            <button class="carousel-dot active" onclick="goToSlide('szczoteczka',0)"></button>
+            <button class="carousel-dot" onclick="goToSlide('szczoteczka',1)"></button>
+            <button class="carousel-dot" onclick="goToSlide('szczoteczka',2)"></button>
+        </div>
+        <p class="service-modal-desc mt-3">
+            Profesjonalne czyszczenie zębów Twojego pupila za pomocą szczoteczki ultradźwiękowej.
+            Zabieg jest bezbolesny, bezpieczny i nie wymaga sedacji. Regularne czyszczenie zapobiega
+            chorobom dziąseł, nieprzyjemnemu zapachowi z pyska oraz gromadzeniu się kamienia nazębnego.
+        </p>
+        <div class="service-modal-footer">
+            <span class="service-modal-price">20 zł</span>
+            <a href="#rezerwacja" class="btn btn-gold" onclick="closeServiceModal('szczoteczka')">
+                <i data-lucide="calendar"></i> Umów wizytę
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Wanna ozonowa -->
+<div class="service-modal-overlay" id="modal-wanna">
+    <div class="service-modal">
+        <button class="service-modal-close" onclick="closeServiceModal('wanna')">×</button>
+        <h3>Wanna ozonowa</h3>
+        <div class="service-modal-carousel" id="carousel-wanna">
+            <img src="static/images/wanna1.jpg" class="active" alt="">
+            <img src="static/images/wanna2.jpg" alt="">
+            <button class="carousel-btn carousel-btn-prev" onclick="prevSlide('wanna')">&#8249;</button>
+            <button class="carousel-btn carousel-btn-next" onclick="nextSlide('wanna')">&#8250;</button>
+        </div>
+        <div class="carousel-dots" id="dots-wanna">
+            <button class="carousel-dot active" onclick="goToSlide('wanna',0)"></button>
+            <button class="carousel-dot" onclick="goToSlide('wanna',1)"></button>
+        </div>
+        <p class="service-modal-desc mt-3">
+            Kąpiel w wannie ozonowej to innowacyjny zabieg pielęgnacyjny, który oczyszcza i regeneruje
+            skórę Twojego pupila. Ozon działa antybakteryjnie, przeciwgrzybiczo i przeciwzapalnie —
+            idealny dla zwierząt z problemami skórnymi, alergiami lub po zabiegach dermatologicznych.
+        </p>
+        <div class="service-modal-footer">
+            <span class="service-modal-price">60 zł</span>
+            <a href="#rezerwacja" class="btn btn-gold" onclick="closeServiceModal('wanna')">
+                <i data-lucide="calendar"></i> Umów wizytę
+            </a>
+        </div>
+    </div>
+</div>
 
 <!-- JAK TO DZIAŁA -->
 <section class="how-it-works" id="jak-to-dziala">
@@ -560,6 +630,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="static/js/gallery.js"></script>
 <script src="static/js/booking.js"></script>
+<script src="static/js/services.js"></script>
 <script>
     lucide.createIcons();
     renderBookingServices('pies');
