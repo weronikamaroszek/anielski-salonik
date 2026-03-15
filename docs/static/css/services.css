@@ -36,6 +36,7 @@
 
 .service-card-featured:hover {
     box-shadow: 0 6px 28px rgba(201, 168, 76, 0.35);
+    background-color: #F5EDD8;
 }
 
 .service-badge {
