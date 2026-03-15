@@ -72,3 +72,17 @@
     .pricing-section { padding: 50px 0; }
     .pricing-card { padding: 20px 15px; }
 }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .pricing-section .row {
+        justify-content: center;
+    }
+    .pricing-section .col-xl-4,
+    .pricing-section .col-lg-6,
+    .pricing-section .col-lg-4,
+    .pricing-section .col-md-6 {
+        width: 50% !important;
+        max-width: 50% !important;
+        flex: 0 0 50% !important;
+    }
+}

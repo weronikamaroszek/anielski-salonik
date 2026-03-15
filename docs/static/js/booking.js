@@ -480,9 +480,12 @@ function submitBooking() {
     const phone = document.getElementById('confirm-phone').value.trim();
 
     if (!name || !phone) {
-        alert('Proszę wypełnić imię i numer telefonu.');
+        showBookingError(!name ? 'confirm-name' : 'confirm-phone',
+            !name ? 'Proszę wpisać imię.' : 'Proszę wpisać numer telefonu.');
         return;
     }
+
+    clearBookingErrors();
 
     const service = bookingServices[selectedAnimal][selectedService];
     const animalNames = { pies: 'Pies', kot: 'Kot', krolik: 'Królik' };
@@ -503,6 +506,27 @@ function submitBooking() {
     setTimeout(() => {
         document.querySelector('.booking-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
+}
+
+function showBookingError(fieldId, message) {
+    clearBookingErrors();
+    const field = document.getElementById(fieldId);
+    field.style.borderColor = '#C0392B';
+    field.style.outline = 'none';
+
+    const error = document.createElement('div');
+    error.className = 'booking-field-error';
+    error.textContent = message;
+    field.parentNode.appendChild(error);
+    field.focus();
+}
+
+function clearBookingErrors() {
+    document.querySelectorAll('.booking-field-error').forEach(el => el.remove());
+    ['confirm-name', 'confirm-phone'].forEach(id => {
+        const field = document.getElementById(id);
+        if (field) field.style.borderColor = '';
+    });
 }
 
 function resetBooking() {

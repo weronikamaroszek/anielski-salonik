@@ -826,3 +826,14 @@
     .dog-behavior-grid { grid-template-columns: 1fr; }
     .dog-visit-toggle { flex-direction: column; }
 }
+
+.booking-field-error {
+    color: #C0392B;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+    margin-top: 6px;
+    padding: 6px 12px;
+    background-color: #fdf0ee;
+    border-left: 3px solid #C0392B;
+    border-radius: 4px;
+}
