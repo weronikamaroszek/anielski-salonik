@@ -12,24 +12,20 @@ function openServiceModal(name) {
 function closeServiceModal(name) {
     const overlay = document.getElementById('modal-' + name);
     overlay.classList.remove('active');
-    const scrollY = document.body.dataset.scrollY || 0;
+    const scrollY = parseInt(document.body.dataset.scrollY || '0');
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
-    window.scrollTo(0, parseInt(scrollY));
-}
-function closeServiceModal(name) {
-    const overlay = document.getElementById('modal-' + name);
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.dataset.scrollY = '';
+    window.scrollTo(0, scrollY);
 }
 
 // Zamknięcie przez kliknięcie w tło
 document.querySelectorAll('.service-modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', function(e) {
         if (e.target === this) {
-            this.classList.remove('active');
-            document.body.style.overflow = '';
+            const name = this.id.replace('modal-', '');
+            closeServiceModal(name);
         }
     });
 });
