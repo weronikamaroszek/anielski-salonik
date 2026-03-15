@@ -14,7 +14,7 @@ const bookingServices = {
     ],
     krolik: [
         { name: 'Wyczesywanie krótkowłosy', time: '45 min', price: '80 zł'      },
-        { name: 'Strzyżenie Karełek Teddy', time: '1h',     price: '100–120 zł' },
+        { name: 'Strzyżenie Karzełek Teddy', time: '1h',     price: '100–120 zł' },
     ]
 };
 
