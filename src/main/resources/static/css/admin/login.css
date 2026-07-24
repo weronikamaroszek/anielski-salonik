@@ -1,0 +1,117 @@
+/* === ADMIN LOGIN PAGE - ANIELSKI SALONIK === */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #F5F0E8;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.login-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.login-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2c2416;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.login-subtitle {
+    color: #6b5c4e;
+    margin: 0 0 40px 0;
+    font-size: 1rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1.5px solid #d4b78c;
+    border-radius: 30px;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #2c2416;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.login-input:focus {
+    border-color: #8B6914;
+}
+
+.login-input::placeholder {
+    color: #a89684;
+}
+
+.login-button {
+    width: 100%;
+    padding: 16px;
+    background-color: #B8860B;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #8B6914;
+}
+
+.login-back {
+    display: inline-block;
+    margin-top: 24px;
+    color: #6b5c4e;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.login-back:hover {
+    color: #8B6914;
+}
+
+/* Messages */
+.login-message {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.login-message.error {
+    background-color: #fce8e8;
+    color: #8b2020;
+    border: 1px solid #f0c0c0;
+}
+
+.login-message.success {
+    background-color: #e8f5e8;
+    color: #2e5c2e;
+    border: 1px solid #c0e0c0;
+}
