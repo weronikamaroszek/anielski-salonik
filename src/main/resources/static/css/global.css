@@ -1,3 +1,9 @@
+/* Smooth scroll for anchor links (menu navigation) */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* offset for fixed navbar */
+}
+
 :root {
     --gold: #C9A84C;
     --gold-light: #F5E6C0;

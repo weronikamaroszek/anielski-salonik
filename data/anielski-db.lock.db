@@ -1,6 +1,6 @@
 #FileLock
-#Sat Jul 25 18:44:05 CEST 2026
+#Sat Jul 25 20:29:10 CEST 2026
 hostName=192.168.1.240
-id=19f9a295369f58cdad4e7e2fb1d4196f0982e5e7407
+id=19f9a8984429f33f9df70ce981825c73accc91ece3d
 method=file
-server=192.168.1.240\:60516
+server=192.168.1.240\:62236

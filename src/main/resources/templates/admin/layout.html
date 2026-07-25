@@ -132,18 +132,14 @@
                             Menu nawigacyjne
                         </h2>
                         <p class="admin-section-desc" style="margin: 0;">
-                            Linki w głównym menu strony.
+                            Linki w głównym menu strony. Możesz edytować nazwy pozycji.
                         </p>
                     </div>
-                    <button type="button" class="admin-btn admin-btn-primary"
-                            onclick="openAddMenuModal()">
-                        + Dodaj
-                    </button>
                 </div>
 
                 <!-- Empty state -->
                 <div th:if="${#lists.isEmpty(menuItems)}" class="admin-empty-state">
-                    Brak pozycji menu. Kliknij "+ Dodaj" aby utworzyć pierwszą.
+                    Brak pozycji menu.
                 </div>
 
                 <div th:unless="${#lists.isEmpty(menuItems)}" class="admin-list">
@@ -155,14 +151,9 @@
                         </div>
                         <div class="admin-list-actions">
                             <button type="button" class="admin-icon-btn"
-                                    th:attr="onclick=|openEditMenuModal(${item.id}, '${item.label}', '${item.url}', ${item.isButton})|"
-                                    title="Edytuj">
+                                    th:attr="onclick=|openEditMenuModal(${item.id}, '${item.label}', '${item.url}')|"
+                                    title="Edytuj nazwę">
                                 ✏
-                            </button>
-                            <button type="button" class="admin-icon-btn danger"
-                                    th:attr="onclick=|openDeleteMenuModal(${item.id}, '${item.label}')|"
-                                    title="Usuń">
-                                🗑
                             </button>
                         </div>
                     </div>
@@ -219,43 +210,11 @@
         </main>
     </div>
 
-    <!-- ==================== MODAL: DODAJ POZYCJĘ MENU ==================== -->
-    <div id="addMenuModal" class="modal-overlay">
-        <div class="modal">
-            <h3 class="modal-title">Dodaj pozycję menu</h3>
-            <p class="modal-desc">Nowy link w głównym menu strony.</p>
-
-            <form th:action="@{/admin/layout/menu/add}" th:object="${newMenuItem}" method="post">
-                <div class="admin-form-group">
-                    <label class="admin-label">Nazwa</label>
-                    <input type="text" class="admin-input" th:field="*{label}"
-                           placeholder="np. O nas" required>
-                </div>
-                <div class="admin-form-group">
-                    <label class="admin-label">Link</label>
-                    <input type="text" class="admin-input" th:field="*{url}"
-                           placeholder="np. /o-nas" required>
-                </div>
-                <div class="admin-form-group">
-                    <label class="admin-label">
-                        <input type="checkbox" th:field="*{isButton}">
-                        Wyświetl jako przycisk (jak "Umów wizytę")
-                    </label>
-                </div>
-                <div class="modal-actions">
-                    <button type="button" class="admin-btn admin-btn-secondary"
-                            onclick="closeModal('addMenuModal')">Anuluj</button>
-                    <button type="submit" class="admin-btn admin-btn-primary">Dodaj</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!-- ==================== MODAL: EDYTUJ POZYCJĘ MENU ==================== -->
     <div id="editMenuModal" class="modal-overlay">
         <div class="modal">
             <h3 class="modal-title">Edytuj pozycję menu</h3>
-            <p class="modal-desc">Zmień nazwę lub link tej pozycji.</p>
+            <p class="modal-desc">Możesz zmienić nazwę wyświetlaną w menu. Link jest ustalony w kodzie strony.</p>
 
             <form id="editMenuForm" method="post">
                 <div class="admin-form-group">
@@ -263,14 +222,9 @@
                     <input type="text" class="admin-input" id="editLabel" name="label" required>
                 </div>
                 <div class="admin-form-group">
-                    <label class="admin-label">Link</label>
-                    <input type="text" class="admin-input" id="editUrl" name="url" required>
-                </div>
-                <div class="admin-form-group">
-                    <label class="admin-label">
-                        <input type="checkbox" id="editIsButton" name="isButton" value="true">
-                        Wyświetl jako przycisk
-                    </label>
+                    <label class="admin-label">Link (nieedytowalny)</label>
+                    <input type="text" class="admin-input" id="editUrl" name="url" required readonly
+                           style="background-color: rgba(0,0,0,0.05); cursor: not-allowed;">
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="admin-btn admin-btn-secondary"
@@ -281,49 +235,21 @@
         </div>
     </div>
 
-    <!-- ==================== MODAL: USUŃ POZYCJĘ MENU ==================== -->
-    <div id="deleteMenuModal" class="modal-overlay">
-        <div class="modal">
-            <h3 class="modal-title">Usunąć pozycję?</h3>
-            <p class="modal-desc">
-                Czy na pewno chcesz usunąć pozycję
-                "<span id="deleteItemName" style="font-weight: bold;"></span>"?
-                Tej operacji nie można cofnąć.
-            </p>
-
-            <form id="deleteMenuForm" method="post">
-                <div class="modal-actions">
-                    <button type="button" class="admin-btn admin-btn-secondary"
-                            onclick="closeModal('deleteMenuModal')">Anuluj</button>
-                    <button type="submit" class="admin-btn admin-btn-danger">Usuń</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <script>
-        function openAddMenuModal() {
-            document.getElementById('addMenuModal').classList.add('active');
-        }
-
-        function openEditMenuModal(id, label, url, isButton) {
+        // Open edit modal with prefilled data
+        function openEditMenuModal(id, label, url) {
             document.getElementById('editMenuForm').action = '/admin/layout/menu/edit/' + id;
             document.getElementById('editLabel').value = label;
             document.getElementById('editUrl').value = url;
-            document.getElementById('editIsButton').checked = isButton;
             document.getElementById('editMenuModal').classList.add('active');
         }
 
-        function openDeleteMenuModal(id, label) {
-            document.getElementById('deleteMenuForm').action = '/admin/layout/menu/delete/' + id;
-            document.getElementById('deleteItemName').textContent = label;
-            document.getElementById('deleteMenuModal').classList.add('active');
-        }
-
+        // Close any modal
         function closeModal(id) {
             document.getElementById(id).classList.remove('active');
         }
 
+        // Close modal when clicking on the overlay (outside the modal box)
         document.querySelectorAll('.modal-overlay').forEach(overlay => {
             overlay.addEventListener('click', (e) => {
                 if (e.target === overlay) overlay.classList.remove('active');
