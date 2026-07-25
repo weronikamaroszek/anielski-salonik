@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- Left sidebar navigation. Active tab is highlighted via th:classappend. -->
+<!-- The 'activeTab' variable is passed by the controller. -->
+<aside th:fragment="sidebar(activeTab)" class="admin-sidebar">
+    <nav class="admin-nav">
+        <a th:href="@{/admin/layout}" class="admin-nav-item"
+           th:classappend="${activeTab == 'layout'} ? 'active' : ''">
+            <span class="admin-nav-icon">⚙</span>
+            <span>Layout</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'uslugi'} ? 'active' : ''">
+            <span class="admin-nav-icon">✂</span>
+            <span>Usługi</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'wizyta'} ? 'active' : ''">
+            <span class="admin-nav-icon">☰</span>
+            <span>Wizyta</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'onas'} ? 'active' : ''">
+            <span class="admin-nav-icon">👥</span>
+            <span>O nas</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'cennik'} ? 'active' : ''">
+            <span class="admin-nav-icon">📋</span>
+            <span>Cennik</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'galeria'} ? 'active' : ''">
+            <span class="admin-nav-icon">🖼</span>
+            <span>Galeria</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'rezerwacja'} ? 'active' : ''">
+            <span class="admin-nav-icon">📅</span>
+            <span>Rezerwacja</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'lokalizacja'} ? 'active' : ''">
+            <span class="admin-nav-icon">📍</span>
+            <span>Lokalizacja</span>
+        </a>
+        <a href="#" class="admin-nav-item"
+           th:classappend="${activeTab == 'kontakt'} ? 'active' : ''">
+            <span class="admin-nav-icon">📞</span>
+            <span>Kontakt</span>
+        </a>
+    </nav>
+</aside>
+
+</body>
+</html>

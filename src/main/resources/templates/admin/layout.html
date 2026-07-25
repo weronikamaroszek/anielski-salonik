@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel administracyjny - Layout</title>
+    <link rel="stylesheet" th:href="@{/css/admin/panel.css}">
+</head>
+<body>
+
+    <!-- Header -->
+    <div th:replace="~{admin/fragments/admin-header :: header}"></div>
+
+    <div class="admin-container">
+
+        <!-- Sidebar -->
+        <div th:replace="~{admin/fragments/admin-sidebar :: sidebar('layout')}"></div>
+
+        <!-- Main content -->
+        <main class="admin-main">
+
+            <!-- First run info banner -->
+            <div th:if="${isFirstRun}" class="admin-flash info">
+                <strong>👋 Witaj w panelu!</strong>
+                <p style="margin-top: 6px;">
+                    To wygląda na pierwsze uruchomienie. Wypełnij formularze poniżej i kliknij "Zapisz",
+                    aby uzupełnić treść strony.
+                </p>
+            </div>
+
+            <!-- Success flash message -->
+            <div th:if="${param.saved}" class="admin-flash success">
+                ✓ Zmiany zostały zapisane
+            </div>
+
+            <!-- ==================== SEKCJA HERO ==================== -->
+            <section class="admin-section">
+                <h2 class="admin-section-title">
+                    <span class="admin-section-icon">⚙</span>
+                    Sekcja Hero
+                </h2>
+
+                <form class="admin-card" th:action="@{/admin/layout/content}"
+                      th:object="${content}" method="post">
+
+                    <input type="hidden" th:field="*{id}">
+
+                    <div class="admin-form-group">
+                        <label class="admin-label">Podtytuł (nad tytułem)</label>
+                        <input type="text" class="admin-input" th:field="*{heroSubtitle}">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label class="admin-label">Tytuł główny (linia 1)</label>
+                        <input type="text" class="admin-input" th:field="*{heroTitle}">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label class="admin-label">Tytuł główny (linia 2 – złota)</label>
+                        <input type="text" class="admin-input" th:field="*{heroTitleGold}">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label class="admin-label">Opis</label>
+                        <textarea class="admin-textarea" th:field="*{heroDescription}"></textarea>
+                    </div>
+
+                    <div class="admin-form-row">
+                        <div class="admin-form-group">
+                            <label class="admin-label">Tekst przycisku "Umów wizytę"</label>
+                            <input type="text" class="admin-input" th:field="*{heroButtonText}">
+                        </div>
+                        <div class="admin-form-group">
+                            <label class="admin-label">Numer telefonu (przycisk)</label>
+                            <input type="text" class="admin-input" th:field="*{heroPhone}">
+                        </div>
+                    </div>
+
+                    <div class="admin-form-row" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="admin-form-group">
+                            <label class="admin-label">Badge 1</label>
+                            <input type="text" class="admin-input" th:field="*{heroBadge1}">
+                        </div>
+                        <div class="admin-form-group">
+                            <label class="admin-label">Badge 2</label>
+                            <input type="text" class="admin-input" th:field="*{heroBadge2}">
+                        </div>
+                        <div class="admin-form-group">
+                            <label class="admin-label">Badge 3</label>
+                            <input type="text" class="admin-input" th:field="*{heroBadge3}">
+                        </div>
+                    </div>
+
+                    <!-- Background image preview + change button -->
+                    <div class="admin-form-group">
+                        <label class="admin-label">Zdjęcie tła</label>
+                        <div th:if="${content.heroBackgroundImage != null and !#strings.isEmpty(content.heroBackgroundImage)}"
+                             class="admin-image-preview">
+                            <span class="admin-image-preview-badge">AKTUALNE TŁO</span>
+                            <img th:src="@{${content.heroBackgroundImage}}" alt="Aktualne tło hero">
+                        </div>
+                        <div th:if="${content.heroBackgroundImage == null or #strings.isEmpty(content.heroBackgroundImage)}"
+                             class="admin-image-upload">
+                            <span class="admin-image-upload-icon">🖼</span>
+                            Brak ustawionego tła
+                        </div>
+                        <button type="button" class="admin-btn admin-btn-primary admin-btn-full"
+                                onclick="alert('Upload zdjęć zostanie dodany w następnym kroku')">
+                            🖼 Zmień zdjęcie tła
+                        </button>
+                        <p class="admin-image-hint">Zalecany format: JPG lub PNG, min. 1920×1080 px.</p>
+                    </div>
+
+                    <input type="hidden" th:field="*{footerCopyright}">
+                    <input type="hidden" th:field="*{footerPhone}">
+                    <input type="hidden" th:field="*{footerFacebookUrl}">
+                    <input type="hidden" th:field="*{heroBackgroundImage}">
+
+                    <div class="admin-save-bar">
+                        <button type="submit" class="admin-btn admin-btn-primary">
+                            💾 Zapisz sekcję Hero
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- ==================== MENU NAWIGACYJNE ==================== -->
+            <section class="admin-section">
+                <div class="admin-list-header">
+                    <div>
+                        <h2 class="admin-section-title" style="margin-bottom: 4px;">
+                            Menu nawigacyjne
+                        </h2>
+                        <p class="admin-section-desc" style="margin: 0;">
+                            Linki w głównym menu strony.
+                        </p>
+                    </div>
+                    <button type="button" class="admin-btn admin-btn-primary"
+                            onclick="openAddMenuModal()">
+                        + Dodaj
+                    </button>
+                </div>
+
+                <!-- Empty state -->
+                <div th:if="${#lists.isEmpty(menuItems)}" class="admin-empty-state">
+                    Brak pozycji menu. Kliknij "+ Dodaj" aby utworzyć pierwszą.
+                </div>
+
+                <div th:unless="${#lists.isEmpty(menuItems)}" class="admin-list">
+                    <div th:each="item : ${menuItems}" class="admin-list-item">
+                        <div class="admin-list-item-content">
+                            <span class="admin-list-item-label" th:text="${item.label}"></span>
+                            <span class="admin-list-item-url" th:text="${item.url}"></span>
+                            <span th:if="${item.isButton}" class="admin-list-item-badge">PRZYCISK</span>
+                        </div>
+                        <div class="admin-list-actions">
+                            <button type="button" class="admin-icon-btn"
+                                    th:attr="onclick=|openEditMenuModal(${item.id}, '${item.label}', '${item.url}', ${item.isButton})|"
+                                    title="Edytuj">
+                                ✏
+                            </button>
+                            <button type="button" class="admin-icon-btn danger"
+                                    th:attr="onclick=|openDeleteMenuModal(${item.id}, '${item.label}')|"
+                                    title="Usuń">
+                                🗑
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== STOPKA ==================== -->
+            <section class="admin-section">
+                <h2 class="admin-section-title">
+                    <span class="admin-section-icon">⚙</span>
+                    Stopka
+                </h2>
+
+                <form class="admin-card" th:action="@{/admin/layout/content}"
+                      th:object="${content}" method="post">
+
+                    <input type="hidden" th:field="*{id}">
+
+                    <input type="hidden" th:field="*{heroSubtitle}">
+                    <input type="hidden" th:field="*{heroTitle}">
+                    <input type="hidden" th:field="*{heroTitleGold}">
+                    <input type="hidden" th:field="*{heroDescription}">
+                    <input type="hidden" th:field="*{heroButtonText}">
+                    <input type="hidden" th:field="*{heroPhone}">
+                    <input type="hidden" th:field="*{heroBadge1}">
+                    <input type="hidden" th:field="*{heroBadge2}">
+                    <input type="hidden" th:field="*{heroBadge3}">
+                    <input type="hidden" th:field="*{heroBackgroundImage}">
+
+                    <div class="admin-form-group">
+                        <label class="admin-label">Tekst copyright</label>
+                        <input type="text" class="admin-input" th:field="*{footerCopyright}">
+                    </div>
+
+                    <div class="admin-form-row">
+                        <div class="admin-form-group">
+                            <label class="admin-label">Telefon</label>
+                            <input type="text" class="admin-input" th:field="*{footerPhone}">
+                        </div>
+                        <div class="admin-form-group">
+                            <label class="admin-label">Link do Facebooka</label>
+                            <input type="text" class="admin-input" th:field="*{footerFacebookUrl}">
+                        </div>
+                    </div>
+
+                    <div class="admin-save-bar">
+                        <button type="submit" class="admin-btn admin-btn-primary">
+                            💾 Zapisz stopkę
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ==================== MODAL: DODAJ POZYCJĘ MENU ==================== -->
+    <div id="addMenuModal" class="modal-overlay">
+        <div class="modal">
+            <h3 class="modal-title">Dodaj pozycję menu</h3>
+            <p class="modal-desc">Nowy link w głównym menu strony.</p>
+
+            <form th:action="@{/admin/layout/menu/add}" th:object="${newMenuItem}" method="post">
+                <div class="admin-form-group">
+                    <label class="admin-label">Nazwa</label>
+                    <input type="text" class="admin-input" th:field="*{label}"
+                           placeholder="np. O nas" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="admin-label">Link</label>
+                    <input type="text" class="admin-input" th:field="*{url}"
+                           placeholder="np. /o-nas" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="admin-label">
+                        <input type="checkbox" th:field="*{isButton}">
+                        Wyświetl jako przycisk (jak "Umów wizytę")
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="admin-btn admin-btn-secondary"
+                            onclick="closeModal('addMenuModal')">Anuluj</button>
+                    <button type="submit" class="admin-btn admin-btn-primary">Dodaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL: EDYTUJ POZYCJĘ MENU ==================== -->
+    <div id="editMenuModal" class="modal-overlay">
+        <div class="modal">
+            <h3 class="modal-title">Edytuj pozycję menu</h3>
+            <p class="modal-desc">Zmień nazwę lub link tej pozycji.</p>
+
+            <form id="editMenuForm" method="post">
+                <div class="admin-form-group">
+                    <label class="admin-label">Nazwa</label>
+                    <input type="text" class="admin-input" id="editLabel" name="label" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="admin-label">Link</label>
+                    <input type="text" class="admin-input" id="editUrl" name="url" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="admin-label">
+                        <input type="checkbox" id="editIsButton" name="isButton" value="true">
+                        Wyświetl jako przycisk
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="admin-btn admin-btn-secondary"
+                            onclick="closeModal('editMenuModal')">Anuluj</button>
+                    <button type="submit" class="admin-btn admin-btn-primary">Zapisz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL: USUŃ POZYCJĘ MENU ==================== -->
+    <div id="deleteMenuModal" class="modal-overlay">
+        <div class="modal">
+            <h3 class="modal-title">Usunąć pozycję?</h3>
+            <p class="modal-desc">
+                Czy na pewno chcesz usunąć pozycję
+                "<span id="deleteItemName" style="font-weight: bold;"></span>"?
+                Tej operacji nie można cofnąć.
+            </p>
+
+            <form id="deleteMenuForm" method="post">
+                <div class="modal-actions">
+                    <button type="button" class="admin-btn admin-btn-secondary"
+                            onclick="closeModal('deleteMenuModal')">Anuluj</button>
+                    <button type="submit" class="admin-btn admin-btn-danger">Usuń</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openAddMenuModal() {
+            document.getElementById('addMenuModal').classList.add('active');
+        }
+
+        function openEditMenuModal(id, label, url, isButton) {
+            document.getElementById('editMenuForm').action = '/admin/layout/menu/edit/' + id;
+            document.getElementById('editLabel').value = label;
+            document.getElementById('editUrl').value = url;
+            document.getElementById('editIsButton').checked = isButton;
+            document.getElementById('editMenuModal').classList.add('active');
+        }
+
+        function openDeleteMenuModal(id, label) {
+            document.getElementById('deleteMenuForm').action = '/admin/layout/menu/delete/' + id;
+            document.getElementById('deleteItemName').textContent = label;
+            document.getElementById('deleteMenuModal').classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) overlay.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

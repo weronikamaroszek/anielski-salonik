@@ -2,23 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<section th:fragment="hero" class="hero">
+<!-- Hero section - all texts are loaded from the database (site_content table). -->
+<!-- Editable via the admin panel at /admin/layout. -->
+<section th:fragment="hero" class="hero"
+         th:style="'background: url(' + @{${content.heroBackgroundImage}} + ') center center/cover no-repeat;'">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-        <p class="hero-subtitle">SALON PIELĘGNACJI ZWIERZĄT</p>
-        <h1>Spa i styl dla<br>
-            <span class="text-gold">Twojego pupila</span>
+
+        <!-- Small subtitle above the title -->
+        <p class="hero-subtitle" th:text="${content.heroSubtitle}"></p>
+
+        <!-- Main title in two lines (second line is gold) -->
+        <h1>
+            <span th:text="${content.heroTitle}"></span><br>
+            <span class="text-gold" th:text="${content.heroTitleGold}"></span>
         </h1>
-        <p class="hero-desc">Psy, koty, króliki - wiemy, jak wydobyć z nich całą urodę!<br>
-            Fryzjer dla zwierząt w Złotowie.</p>
+
+        <!-- Description text -->
+        <p class="hero-desc" th:text="${content.heroDescription}"></p>
+
+        <!-- CTA buttons: main button + phone -->
         <div class="hero-buttons">
-            <a href="/rezerwacja" class="btn btn-gold">Umów wizytę</a>
-            <a href="tel:539916720" class="btn btn-outline-gold"><i data-lucide="phone"></i> 539 916 720</a>
+            <a href="/rezerwacja" class="btn btn-gold" th:text="${content.heroButtonText}"></a>
+            <a th:href="'tel:' + ${content.heroPhone}" class="btn btn-outline-gold">
+                <i data-lucide="phone"></i>
+                <span th:text="${content.heroPhone}"></span>
+            </a>
         </div>
+
+        <!-- Three feature badges -->
         <div class="hero-badges">
-            <span><i data-lucide="heart"></i> Delikatnie</span>
-            <span><i data-lucide="sparkles"></i> Profesjonalnie</span>
-            <span><i data-lucide="star"></i> Indywidualnie</span>
+            <span><i data-lucide="heart"></i> <span th:text="${content.heroBadge1}"></span></span>
+            <span><i data-lucide="sparkles"></i> <span th:text="${content.heroBadge2}"></span></span>
+            <span><i data-lucide="star"></i> <span th:text="${content.heroBadge3}"></span></span>
         </div>
     </div>
 </section>

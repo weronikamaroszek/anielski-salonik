@@ -15,26 +15,33 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/admin/**").authenticated()
-                .anyRequest().permitAll()
-            )
-            .formLogin(form -> form
-                .loginPage("/admin/login")
-                .defaultSuccessUrl("/admin", true)
-                .permitAll()
-            )
-            .logout(logout -> logout
-                .logoutUrl("/admin/logout")
-                .logoutSuccessUrl("/")
-                .permitAll()
-            );
-        return http.build();
-    }
+    
+@Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http
+        .authorizeHttpRequests(auth -> auth
+            // H2 console - allowed for dev, TODO: remove before production
+            .requestMatchers(org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console()).permitAll()
+            // Admin panel - only for logged in users
+            .requestMatchers("/admin/**").authenticated()
+            // Everything else - public
+            .anyRequest().permitAll()
+        )
+        .formLogin(form -> form
+            .loginPage("/admin/login")
+            .defaultSuccessUrl("/admin", true)
+            .permitAll()
+        )
+        .logout(logout -> logout
+            .logoutUrl("/admin/logout")
+            .logoutSuccessUrl("/")
+            .permitAll()
+        )
+        // H2 console needs CSRF disabled and frame options disabled (dev only!)
+        .csrf(csrf -> csrf.ignoringRequestMatchers(org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console()))
+        .headers(headers -> headers.frameOptions(frame -> frame.disable()));
+    return http.build();
+}
 
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {

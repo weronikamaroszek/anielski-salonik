@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- Admin panel top bar with logo and back link -->
+<header th:fragment="header" class="admin-header">
+    <a th:href="@{/}" class="admin-back">
+        <span class="admin-back-arrow">←</span>
+        <span>Wróć na stronę</span>
+    </a>
+    <div class="admin-title-wrap">
+        <img th:src="@{/images/logo.png}" alt="Anielski Salonik" class="admin-logo">
+        <h1 class="admin-title">Panel administracyjny</h1>
+    </div>
+    <div class="admin-header-right"></div>
+</header>
+
+</body>
+</html>
